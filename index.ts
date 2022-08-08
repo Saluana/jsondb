@@ -3,12 +3,12 @@ import AES from "crypto-js/aes"
 import Utf8 from "crypto-js/enc-utf8"
 const fsPromises = fs.promises
 
-interface KVQuery {
+export default interface KVQuery {
     key: string;
     value: any;
 }
 
-class JsonDB {
+export default class JsonDB {
     readonly name: string;
     readonly path: string = './db';
 
@@ -192,3 +192,4 @@ class JsonDB {
         return Promise.resolve(dbData)
     }
 }
+
